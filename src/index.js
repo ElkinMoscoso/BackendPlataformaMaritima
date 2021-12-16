@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import CategoryRouter from './router/category.router';
 import ProductRouter from './router/product.router';
 import UserRouter from './router/user.router';
+import PuertoRouter from './router/puerto.router';
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,7 @@ const main = async () => {
   app.use('/api', CategoryRouter);
   app.use('/api', ProductRouter);
   app.use('/api', UserRouter);
+  app.use('/api', PuertoRouter);
 
   app.listen(process.env.PORT, () => {
     console.log(`app listening at port ${process.env.PORT}`);
