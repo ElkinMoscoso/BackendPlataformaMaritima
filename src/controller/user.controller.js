@@ -35,6 +35,10 @@ const sendEmail = async (user) => {
     html: `<b>Confirm Email <a href='localhost:3001/api/confirm/email/${user._id}'>Click here</a></b>`, // html body
   });
 };
+const getUser = async (req, res) => {
+  const user = req.user;
+  return res.json({ status: true, item: user });
+};
 
 const login = async (req, res) => {
   try {
@@ -63,6 +67,6 @@ const login = async (req, res) => {
   }
 };
 
-const getUser = async (req, res) => {};
+// const getUser = async (req, res) => {};
 
 export { register, login, getUser };
