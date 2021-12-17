@@ -1,5 +1,5 @@
 import UserModel from './../model/user.model';
-// import { hashSync, compareSync } from 'bcrypt';
+import { hashSync, compareSync } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 import { createTransport } from 'nodemailer';
 
@@ -29,7 +29,7 @@ const sendEmail = async (user) => {
   });
 
   await transporter.sendMail({
-    from: '"Fred Foo 👻" <s3na2021@gmail.com>', // sender address
+    from: '"Hola bienvenido a la plataforma de gestion de transporte maritima 👻"', // sender address
     to: user.email, // list of receivers
     subject: 'Hello ✔', // Subject line
     html: `<b>Confirm Email <a href='localhost:3001/api/confirm/email/${user._id}'>Click here</a></b>`, // html body
